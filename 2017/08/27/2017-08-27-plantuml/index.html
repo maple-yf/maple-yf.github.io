@@ -57,6 +57,7 @@
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/prism.css" >
 
   
     
@@ -74,12 +75,11 @@
     <link rel="stylesheet" href="/css/vdonate.css" >
   
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
+  <body data-spy="scroll" data-target="#toc" data-offset="50" class="line-numbers">
 
 
   
@@ -210,20 +210,19 @@
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在学习设计模式，但是在画类图的时候，有一堆的画图工具可以选择，但总感觉用的不顺手。于是在网上找到了这个神奇的语言。PlantUML是一个开源项目，支持时序图、用例图、类图、活动图、组件图、状态图、对象图等的绘制。简而言之，就是用写代码的方式画图。几行代码，输出标准结构图，不用再去考虑结构、对齐等琐事啦！</p>
 <h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p>如下简单的语法表达类图之间的关系</p>
-<pre><code>@startuml
+<pre class="language-none"><code class="language-none">@startuml
 Class01 &lt;|-- Class02
 Class03 &lt;|.. Class04
 Class05 *-- Class06
 Class07 o-- Class08
 Class09 &lt;.. Class10
 Class11 &lt;-- Class12
-@enduml
-</code></pre>
+@enduml</code></pre>
 <span id="more"></span>
 <p>效果如下：</p>
 <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-08-13-plantuml/class.png"></p>
 <p>再看一下复杂一点的装饰者模式类图，代码如下</p>
-<pre><code>@startuml
+<pre class="language-none"><code class="language-none">@startuml
 namespace Decorator&#123;
     interface Component
     interface Decorator
@@ -256,20 +255,20 @@ namespace Decorator&#123;
         addBehavior();
     end note
 &#125;
-@enduml
-</code></pre>
+@enduml</code></pre>
+
 <p>效果图：</p>
 <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-08-13-plantuml/decorator.png"></p>
 <p>时序图长这样：</p>
-<pre><code>@startuml
+<pre class="language-none"><code class="language-none">@startuml
 title 时序图
 
-== 鉴权阶段 ==
+&#x3D;&#x3D; 鉴权阶段 &#x3D;&#x3D;
 
 Alice -&gt; Bob: 请求
 Bob -&gt; Alice: 应答
 
-== 数据上传 ==
+&#x3D;&#x3D; 数据上传 &#x3D;&#x3D;
 
 Alice -&gt; Bob: 上传数据
 note left: 这是显示在左边的备注
@@ -281,22 +280,21 @@ note right: 这是显示在右边的备注
 
 Bob -&gt; Alice: 状态返回
 
-== 状态显示 ==
+&#x3D;&#x3D; 状态显示 &#x3D;&#x3D;
 
 Alice -&gt; Alice: 给自己发消息
-@enduml
-</code></pre>
+@enduml</code></pre>
+
 <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-08-13-plantuml/sequence.png"></p>
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>这里主要介绍 Mac + VS Code + Markdown Preview Enhanced 实现PlantUML预览的配置过程</p>
 <p>Mac环境支持plantUML的markdown编译步骤</p>
-<pre><code>brew install libtool
+<pre class="language-none"><code class="language-none">brew install libtool
 brew link libtool
 brew install graphviz
-brew link --overwrite graphviz
-</code></pre>
+brew link --overwrite graphviz</code></pre>
+
 <p>如果没有gem，先安装gem。然后执行下面语句安装 asciidoctor。</p>
-<pre><code>gem install asciidoctor
-</code></pre>
+<pre class="language-none"><code class="language-none">gem install asciidoctor</code></pre>
 <p>安装完支持环境之后，VS Code里装上 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">Markdown Preview Enhanced</a> 就可以在markdown里编辑和预览效果啦！</p>
 <p>plantuml语法：<a target="_blank" rel="noopener" href="http://plantuml.com/">http://plantuml.com/</a></p>
 <p>目前，sublime、Atom、VS Code、Webstorm都有相对应的插件来实现在编辑器里编辑和预览plantUML。</p>
@@ -322,8 +320,8 @@ var a = new Donate({
   title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
   btnText: '打赏支持', // 可选参数，打赏按钮文字
   el: document.getElementById('donation_div'),
-  wechatImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/WeChat.jpg',
-  alipayImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/Alipay.jpg'
+  wechatImage: '/images/QrCode/WeChat.jpg',
+  alipayImage: '/images/QrCode/Alipay.jpg'
 });
 </script>
       
@@ -585,6 +583,7 @@ var a = new Donate({
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  <script type="text/javascript" src="/js/prism.js?v=1.0.0" async=""></script>
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   

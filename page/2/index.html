@@ -46,6 +46,7 @@
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/prism.css" >
 
   
     <link rel="stylesheet" href="/css/home.css" >
@@ -59,8 +60,7 @@
     <link rel="stylesheet" href="/css/vdonate.css" >
   
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -515,16 +515,15 @@ ruby -v
         <div href="/2015/12/01/2015-12-01-Setting-Ubuntu-User/" class="article-excerpt-container">
           <p>最近在安装实验室一台服务器，系统装的是Ubuntu 14.04，今天在添加用户的时候出了点小问题，在这里总结一下。</p>
 <h1 id="为Ubuntu添加新用户"><a href="#为Ubuntu添加新用户" class="headerlink" title="为Ubuntu添加新用户"></a>为Ubuntu添加新用户</h1><p>在网上查到为Ubuntu填加新用户的方式是 sudo useradd me和passwd me来设置，但是，这样设置有一个很大的坑，因为这样设置的用户信息是不全的，直接导致使用这种方式设置的用户在进行远程登陆的时候，会出现</p>
-<pre><code>    Could not chdir to home directory /home/me: No such file or directory
-</code></pre>
+<pre class="language-none"><code class="language-none">Could not chdir to home directory &#x2F;home&#x2F;me: No such file or directory</code></pre>
+
 <p>的错误，可以用过输入 bash 来进入正常的状态</p>
-<pre><code>    $ bash
-    me@server:/$
-</code></pre>
+<pre class="language-none"><code class="language-none">$ bash
+me@server:&#x2F;$</code></pre>
         </div>
         <!-- 最近在安装实验室一台服务器，系统装的是Ubuntu 14.04，今天在添加用户的时候出了点小问题，在这里总结一下。
 为Ubuntu添加新用户在网上查到为Ubuntu填加新用户的方式是 sudo useradd me和passwd me来设置，但是，这样设置有一个很大的坑，因为这样设置的用户信息是不全的，直接导致使用这种方式设置的用户在进行远程登陆的时候，会出现
-    Could not c......  -->
+Could not chdir......  -->
         <p class="article-more-link">
           <a href="/2015/12/01/2015-12-01-Setting-Ubuntu-User/#more">阅读全文</a>
         </p>
@@ -604,15 +603,13 @@ ruby -v
         <div href="/2015/11/12/2015-11-12-shadowsocks/" class="article-excerpt-container">
           <p>ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>输入su进入root。<br>分别复制以下命令到命令行：</p>
-<pre><code>    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
-    chmod +x shadowsocks.sh
-    ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-</code></pre>
+<pre class="language-none"><code class="language-none">wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocks.sh
+chmod +x shadowsocks.sh
+.&#x2F;shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</code></pre>
         </div>
         <!-- ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！
 安装输入su进入root。分别复制以下命令到命令行：
-    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
-   ......  -->
+wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;mast......  -->
         <p class="article-more-link">
           <a href="/2015/11/12/2015-11-12-shadowsocks/#more">阅读全文</a>
         </p>
@@ -691,8 +688,8 @@ ruby -v
       
         <p>最近装了win10，但是有一个小问题，右击电脑空白处想刷新的时候，反应特别慢，因为系统是安装在固态硬盘上的，所以不应该出现这种问题，于是网上搜罗了一些解决方法。</p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>开始，运行：regedit，打开注册表</p>
-<pre><code>    HKEY_CLASSES_ROOT/Directory/Background/shellex/ContextMenuHandlers
-</code></pre>
+<pre class="language-none"><code class="language-none">HKEY_CLASSES_ROOT&#x2F;Directory&#x2F;Background&#x2F;shellex&#x2F;ContextMenuHandlers</code></pre>
+
 <p>删除下面两个选项就可以了：一个是 igfxcui ,另外一个是NvCplDesktopContext如果只有一项就单独删除，如果两项都有就全部删除。</p>
 
       
@@ -1018,6 +1015,7 @@ ruby -v
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  <script type="text/javascript" src="/js/prism.js?v=1.0.0" async=""></script>
   
 </body>
 </html>

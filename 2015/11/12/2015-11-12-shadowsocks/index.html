@@ -11,12 +11,12 @@
   
   
   
-  <meta name="description" content="ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！ 安装输入su进入root。分别复制以下命令到命令行：     wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocks.sh     ch">
+  <meta name="description" content="ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！ 安装输入su进入root。分别复制以下命令到命令行： wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装 ShadowScoks">
 <meta property="og:url" content="http://blog.maple-yf.com/2015/11/12/2015-11-12-shadowsocks/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！ 安装输入su进入root。分别复制以下命令到命令行：     wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocks.sh     ch">
+<meta property="og:description" content="ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！ 安装输入su进入root。分别复制以下命令到命令行： wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss3.png">
@@ -57,6 +57,7 @@
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/prism.css" >
 
   
     
@@ -74,12 +75,11 @@
     <link rel="stylesheet" href="/css/vdonate.css" >
   
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
+  <body data-spy="scroll" data-target="#toc" data-offset="50" class="line-numbers">
 
 
   
@@ -210,45 +210,44 @@
       
         <p>ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>输入su进入root。<br>分别复制以下命令到命令行：</p>
-<pre><code>    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
-    chmod +x shadowsocks.sh
-    ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-</code></pre>
+<pre class="language-none"><code class="language-none">wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocks.sh
+chmod +x shadowsocks.sh
+.&#x2F;shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</code></pre>
 <span id="more"></span>
 <p>执行最后一条命令之后，出现一下界面：</p>
 <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss1.png"></p>
 <p>输入密码即可。并回车，再次回车，确认安装。</p>
 <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss3.png"></p>
 <p>安装失败，出现错误提示：</p>
-<pre><code>    ./shadowsocks.sh: line 111:  6396 Segmentation fault      (core dumped) apt-get -y update
-    Reading package lists..../shadowsocks.sh: line 111:  6461 Segmentation fault      (core dumped) apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
-</code></pre>
+<pre class="language-none"><code class="language-none">.&#x2F;shadowsocks.sh: line 111:  6396 Segmentation fault      (core dumped) apt-get -y update
+Reading package lists....&#x2F;shadowsocks.sh: line 111:  6461 Segmentation fault      (core dumped) apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio</code></pre>
+
 <p>分别执行 (core dumped)后面的语句</p>
-<pre><code>    apt-get -y update
-    apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
-</code></pre>
+<pre class="language-none"><code class="language-none">apt-get -y update
+apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio</code></pre>
+
 <p>然后，重新执行:</p>
-<pre><code>    ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-</code></pre>
+<pre class="language-none"><code class="language-none">.&#x2F;shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</code></pre>
+
 <p>等待5分钟左右，即可安装成功，安装成功之后就会通过屏幕输出，您的IP地址，端口，密码，及加密方式。</p>
 <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss4.png"></p>
 <p>如果您想多用户使用，请配置 /etc/shadowsocks.json 这个文件。配置模版：</p>
-<pre class="line-numbers language-yaml"><code class="language-yaml">    &amp;<span class="token comment" spellcheck="true">#123;</span>
-        "server"<span class="token punctuation">:</span><span class="token string">"your_server_ip"</span><span class="token punctuation">,</span>
-        <span class="token key atrule">"local_address"</span><span class="token punctuation">:</span> <span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span>
-        "local_port"<span class="token punctuation">:</span><span class="token number">1080</span><span class="token punctuation">,</span>
-        "port_password"<span class="token punctuation">:</span>&amp;<span class="token comment" spellcheck="true">#123;</span>
-            "8989"<span class="token punctuation">:</span><span class="token string">"password0"</span><span class="token punctuation">,</span>
-            "9001"<span class="token punctuation">:</span><span class="token string">"password1"</span><span class="token punctuation">,</span>
-            "9002"<span class="token punctuation">:</span><span class="token string">"password2"</span><span class="token punctuation">,</span>
-            "9003"<span class="token punctuation">:</span><span class="token string">"password3"</span><span class="token punctuation">,</span>
-            "9004"<span class="token punctuation">:</span><span class="token string">"password4"</span>
-        &amp;<span class="token comment" spellcheck="true">#125;,</span>
-        "timeout"<span class="token punctuation">:</span><span class="token number">300</span><span class="token punctuation">,</span>
-        "method"<span class="token punctuation">:</span><span class="token string">"aes-256-cfb"</span><span class="token punctuation">,</span>
-        <span class="token key atrule">"fast_open"</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-    &amp;<span class="token comment" spellcheck="true">#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">&#123;
+    &quot;server&quot;:&quot;your_server_ip&quot;,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;port_password&quot;:&#123;
+        &quot;8989&quot;:&quot;password0&quot;,
+        &quot;9001&quot;:&quot;password1&quot;,
+        &quot;9002&quot;:&quot;password2&quot;,
+        &quot;9003&quot;:&quot;password3&quot;,
+        &quot;9004&quot;:&quot;password4&quot;
+    &#125;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;: false
+&#125;</code></pre>
+
 <p>Windows客户端下载地址：<a target="_blank" rel="noopener" href="https://shadowsocks.org/en/download/clients.html">https://shadowsocks.org/en/download/clients.html</a><br>使用教程：<a target="_blank" rel="noopener" href="http://wiki.ssnode.co/index.php?option=com_content&view=article&id=4:about-your-home-page&catid=9&Itemid=101">http://wiki.ssnode.co/index.php?option=com_content&amp;view=article&amp;id=4:about-your-home-page&amp;catid=9&amp;Itemid=101</a><br>使用shadowsocks时，必须要通过SSH连接上自己的VPS后才能代理成功。</p>
 
       
@@ -265,8 +264,8 @@ var a = new Donate({
   title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
   btnText: '打赏支持', // 可选参数，打赏按钮文字
   el: document.getElementById('donation_div'),
-  wechatImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/WeChat.jpg',
-  alipayImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/Alipay.jpg'
+  wechatImage: '/images/QrCode/WeChat.jpg',
+  alipayImage: '/images/QrCode/Alipay.jpg'
 });
 </script>
       
@@ -528,6 +527,7 @@ var a = new Donate({
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  <script type="text/javascript" src="/js/prism.js?v=1.0.0" async=""></script>
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
