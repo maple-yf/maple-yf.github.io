@@ -18,15 +18,15 @@
 <meta property="og:site_name" content="Maple&#39;s Blog">
 <meta property="og:description" content="ShadowScoks是一个非常易用的翻墙工具，把它安装在自己的VPS上，就可以随心所欲的上网啦！ 安装输入su进入root。分别复制以下命令到命令行： wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss3.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss4.png">
+<meta property="og:image" content="http://blog.maple-yf.com/images/2015-11-12-shadowsocks/ss1.png">
+<meta property="og:image" content="http://blog.maple-yf.com/images/2015-11-12-shadowsocks/ss3.png">
+<meta property="og:image" content="http://blog.maple-yf.com/images/2015-11-12-shadowsocks/ss4.png">
 <meta property="article:published_time" content="2015-11-12T07:30:00.000Z">
-<meta property="article:modified_time" content="2020-12-21T15:44:10.049Z">
+<meta property="article:modified_time" content="2022-04-09T08:18:41.323Z">
 <meta property="article:author" content="maple.yf">
 <meta property="article:tag" content="ShadowSocks">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss1.png">
+<meta name="twitter:image" content="http://blog.maple-yf.com/images/2015-11-12-shadowsocks/ss1.png">
   
     <link rel="alternate" href="/atom.xml" title="Maple&#39;s Blog" type="application/atom+xml">
   
@@ -215,9 +215,9 @@ chmod +x shadowsocks.sh
 .&#x2F;shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</code></pre>
 <span id="more"></span>
 <p>执行最后一条命令之后，出现一下界面：</p>
-<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss1.png"></p>
+<p><img src="/images/2015-11-12-shadowsocks/ss1.png"></p>
 <p>输入密码即可。并回车，再次回车，确认安装。</p>
-<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss3.png"></p>
+<p><img src="/images/2015-11-12-shadowsocks/ss3.png"></p>
 <p>安装失败，出现错误提示：</p>
 <pre class="language-none"><code class="language-none">.&#x2F;shadowsocks.sh: line 111:  6396 Segmentation fault      (core dumped) apt-get -y update
 Reading package lists....&#x2F;shadowsocks.sh: line 111:  6461 Segmentation fault      (core dumped) apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio</code></pre>
@@ -230,7 +230,7 @@ apt-get -y install python python-dev python-pip curl wget unzip gcc swig automak
 <pre class="language-none"><code class="language-none">.&#x2F;shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</code></pre>
 
 <p>等待5分钟左右，即可安装成功，安装成功之后就会通过屏幕输出，您的IP地址，端口，密码，及加密方式。</p>
-<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2015-11-12-shadowsocks/ss4.png"></p>
+<p><img src="/images/2015-11-12-shadowsocks/ss4.png"></p>
 <p>如果您想多用户使用，请配置 /etc/shadowsocks.json 这个文件。配置模版：</p>
 <pre class="language-yaml" data-language="yaml"><code class="language-yaml">&#123;
     &quot;server&quot;:&quot;your_server_ip&quot;,
