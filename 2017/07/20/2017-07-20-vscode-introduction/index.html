@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>前端编程利器VS Code | Maple's Blog</title><meta name="author" content="maple.yf"><meta name="copyright" content="maple.yf"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="article">
+<meta property="og:title" content="前端编程利器VS Code">
+<meta property="og:url" content="https://maple-yf.github.io/2017/07/20/2017-07-20-vscode-introduction/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maple-yf.github.io/images/icons/M-S.png">
+<meta property="article:published_time" content="2017-07-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-12T16:29:12.077Z">
+<meta property="article:author" content="maple.yf">
+<meta property="article:tag" content="VS Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maple-yf.github.io/images/icons/M-S.png"><link rel="shortcut icon" href="/images/icons/favicon.ico"><link rel="canonical" href="https://maple-yf.github.io/2017/07/20/2017-07-20-vscode-introduction/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端编程利器VS Code',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-13 00:29:12'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/icons/M-S.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Maple's Blog"><span class="site-name">Maple's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">前端编程利器VS Code</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2017-07-19T16:00:00.000Z" title="发表于 2017-07-20 00:00:00">2017-07-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-12T16:29:12.077Z" title="更新于 2024-08-13 00:29:12">2024-08-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tech/">Tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端编程利器VS Code"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2017/07/20/2017-07-20-vscode-introduction/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="/images/2017-07-12-vscode-introduction/icon.png"></p>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前端同学使用的编辑器可选范围非常广泛。</p>
+<p>最开始接触到前端的时候，听说了<a target="_blank" rel="noopener" href="http://www.adobe.com/cn/products/dreamweaver.html">Dreamweaver</a>这么一个强大的软件，但严格意义上讲，这不能算作一个编辑器。后来认识了NotePad++，在当时，这确实是一款非常好用的编辑器，语法高亮的友好度仅次于IDE，而且占用内存小，运行非常流畅。</p>
+<p>再然后，有人推荐<a target="_blank" rel="noopener" href="https://www.sublimetext.com/">Sublime</a>。我用的时候，还是Sublime 2，最吸引我的是它的mini map，拖动mini map快速浏览大段大段的代码，比拖动小小的滑块酸爽很多呀。再加上后来安装的各种插件，感觉我进入了一个全新的世界，Sublime才是我最想用的编辑器呀！</p>
+<p>工作之后，听说大家都在用<a target="_blank" rel="noopener" href="https://www.jetbrains.com/webstorm/">webstorm</a>，于是我也安装了一个试试，功能确实强大，特别它自带的git管理以及编辑器内部打开terminal的功能，非常适合前端开发。但是，功能强大的webstorm太过于笨重，每次打开的时候都要等一会儿，占用内存太高，同时开启两个项目的时候，电脑就会特别卡，非常影响写代码的心情，而且，webstorm是收费软件，用了一段时间之后果断放弃。</p>
+<p>这时，我尝试了一款觊觎已久的酷炫编辑器 <a target="_blank" rel="noopener" href="https://atom.io/">Atom</a>。用了Atom之后，我才知道了什么叫酷炫！Sublime算什么，我再也不要用那个丑丑的Sublime了。基于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Electron_(%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6)">Electron</a>（最初以Atom Shell知名）和许可使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Chromium">Chromium</a>和Node.js的跨平台应用框架，并使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CoffeeScript">CoffeeScript</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LESS_(%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8)">Less</a>编写。Atom不但酷炫而且强大，因为有着活跃的社区，所以插件非常多，除了满足开发的刚需之外，还有很多想都想不到的插件。但是但是，美中不足的是Atom太卡了，而且用的时候偶尔还会崩溃。坚持用了一个月，最后实在受不了，我又换回Sublime了，但是心中很不甘啊！</p>
+<p>当时我就想着，如果有一款编辑器可以像Sublime一样流程同时又像Atom一样酷炫该有多好。于是，我遇到了VS Code。VS Code刚刚发布Beta版时我尝试着用过一次，当时还不稳定，社区也不完善，插件更是贫乏，所以没留下好印象。这次重新尝试，是因为听说它和Atom一样，也是通过Electron编写的，我想，至少可以像Atom一样酷炫吧。试用之后才发现，原来这才是我一直苦苦寻找的理想编辑器呀！</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>我强烈推荐VS Code的原因是它有以下几大特点：</p>
+<ul>
+<li><strong>酷炫</strong> 和Atom一样采用Electron框架编写，整个软件其实就是一个WebAPP，样式深度定制，酷炫到超乎你想象。如果觉得还不过瘾，可以自己编写theme插件，满足你的各种癖好。</li>
+<li><strong>轻量</strong> 虽然同样是采用Electron框架编写，但是VS Code和Atom走了不同的路线。Atom从一开始就把插件化架构摆在第一位，所以，Atom中最重要的是灵活而又完备的API，性能则不那么重要。VS Code则是把用户体验放在第一位，高性能、更能丰富才是它的首要目的，所以，一开始VS Code的插件系统很糟糕。但是VS Code的性能绝对高出Atom一个档位。</li>
+<li><strong>开源</strong> 继承了Electron的良好基因。</li>
+<li><strong>跨平台</strong> 依然是继承了Electron的良好基因。</li>
+<li><strong>丰富的插件</strong> 虽然不如Sublime和Atom数量多，但现在已经有越来越多的插件涌入。</li>
+<li><strong>活跃的社区</strong> 得益于Electron和Atom，VS Code的社区也是非常的活跃，更加快了插件生态的繁荣。</li>
+</ul>
+<h2 id="自带功能"><a href="#自带功能" class="headerlink" title="自带功能"></a>自带功能</h2><h3 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h3><p>VS Code不需要安装插件，自身就实现了Emmet，默认就是打开的。</p>
+<h3 id="智能感知"><a href="#智能感知" class="headerlink" title="智能感知"></a>智能感知</h3><p>VS Code本身自带JS代码提示和自动补全功能，当然，如果你觉得不够用，还可以安装各种intelligence或者snippets插件来满足需求。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/js-intelligence.png" alt="JS智能提示"></p>
+<h3 id="Format-Document"><a href="#Format-Document" class="headerlink" title="Format Document"></a>Format Document</h3><p>对于压缩的代码，或者格式不够规范的代码文件，可以通过这个命令一键格式化代码。当然，这个功能是每个编辑器应该都有的，并不是亮点。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/format-document.png" alt="Fromat Document"></p>
+<h3 id="Auto-Save"><a href="#Auto-Save" class="headerlink" title="Auto Save"></a>Auto Save</h3><p>自动保存功能也是大部分优秀的编辑器应该必备的。我认为VS Code里做的比较人性化的一个点是，它的设置选项里提供了四种自动保存的时机供我们选择：<strong>off</strong>、<strong>afterDelay</strong>、<strong>onFocusChange</strong>(编辑器失去焦点)、<strong>onWindowChange</strong>(窗口失去焦点)。如果设置为<strong>afterDelay</strong>，则可在 <code>files.autoSaveDelay</code> 中配置延迟。我比较喜欢<strong>onWindowChange</strong>。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/auto-save.png" alt="Auto Save"></p>
+<h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><p>VS Code自带打开Terminal的功能，这是Atom和Sublime所不具备的。这也算是VS Code的一大亮点。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/terminal.png" alt="Terminal"></p>
+<h2 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h2><p>接下来，推荐一些我用到过的非常实用的插件，帮助你编程时候事半功倍！</p>
+<h3 id="Git-History"><a href="#Git-History" class="headerlink" title="Git History"></a><a target="_blank" rel="noopener" href="https://github.com/DonJayamanne/gitHistoryVSCode">Git History</a></h3><p><img src="/images/2017-07-12-vscode-introduction/git-history.gif" alt="Git History"></p>
+<p>可以查看一个文件的所有提交记录，同时还可以调出一个可视化的界面展示文件的提交记录，是git log的强化版。还可以查看某一行的所有提交记录。</p>
+<h3 id="Git-Peoject-Manager"><a href="#Git-Peoject-Manager" class="headerlink" title="Git Peoject Manager"></a><a target="_blank" rel="noopener" href="https://github.com/felipecaputo/git-project-manager">Git Peoject Manager</a></h3><p>这是一个git项目管理的插件，一共就4个命令：</p>
+<ul>
+<li>**GPM: Open Git Project (Ctrl+Alt+P)**：打开git项目</li>
+<li><strong>GPM: Refresh Projects</strong>：刷新git项目</li>
+<li><strong>GPM: Refresh specific project folder</strong>：刷新特定路径下的git项目</li>
+<li>**GPM: Open Recent Git Project (Ctrl+Shift+Q)**：最近打开的git项目列表</li>
+</ul>
+<p><img src="/images/2017-07-12-vscode-introduction/git-project-manager.gif" alt="Git Project Manager"></p>
+<p>插件的使用也很简单，找到配置文件中<code>gitProjectManager.baseProjectsFolders</code>把git项目的根目录放进去，就像下边这样：<br><code>&#123;     &quot;gitProjectManager.baseProjectsFolders&quot;: [         &quot;/home/user/nodeProjects&quot;,         &quot;/home/user/personal/pocs&quot;     ] &#125;</code></p>
+<p>然后<code>cmd + shift + P</code>调出命令栏，并输入<code>GPM</code>，上述的4个命令就被列出来了，选择<code>Refresh Projects</code>，稍等一会儿后，被我们添加到配置文件里的路径下的所有git项目都会被列出来。选择你的工作目录开始Coding吧！</p>
+<h3 id="Git-Lens"><a href="#Git-Lens" class="headerlink" title="Git Lens"></a><a target="_blank" rel="noopener" href="https://github.com/eamodio/vscode-gitlens">Git Lens</a></h3><p>这是一款非常强大的git插件，它提供的每一个功能，都戳中了我们日常开发中的需求痛点。所以，我强烈推荐大家安装并使用这款插件。先目睹一下它的功能概览gif图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/806919-0c09d650b1b21143.gif?imageMogr2/auto-orient/strip" alt="gitlens-preview.gif"></p>
+<h5 id="Code-Lens"><a href="#Code-Lens" class="headerlink" title="Code Lens"></a>Code Lens</h5><p>在文件的顶部展示代码变更的总的记录，包括左边的最新修改记录以及右边的所有的修改作者数量。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/git-lens.gif" alt="Code Lens"></p>
+<h5 id="Blame-Annotations"><a href="#Blame-Annotations" class="headerlink" title="Blame Annotations"></a>Blame Annotations</h5><p>点击右边的作者数量可以进入整个文件的Blame Annotations。这里展示了每一行的最后一条修改记录，具体的展示方式可以在设置里自己配置，包括作者、时间和commit信息。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/blame-annotations.png" alt="Blame Annotations"></p>
+<h5 id="Status-Bar-Blame"><a href="#Status-Bar-Blame" class="headerlink" title="Status Bar Blame"></a>Status Bar Blame</h5><p>这个是指在状态栏里展示当前光标所在行的Git Blame信息。当然这里要展示的信息和格式也是可以配置的。这样，光标所在的行的最新git记录和作者信息完全展示在了状态栏里。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/status-bar-blame.png" alt="Status Bar Blame"></p>
+<h5 id="Interactive-Blame"><a href="#Interactive-Blame" class="headerlink" title="Interactive Blame"></a>Interactive Blame</h5><p>这个功能和Status Bar Status类似，只不过，git信息是直接展示在文件中的代码后边。鼠标悬停在git记录上时，会有更详细的git变更气泡弹出。就像下边这样：</p>
+<p><img src="/images/2017-07-12-vscode-introduction/interactive-blame.png" alt="Interactive Blame"></p>
+<h5 id="Quick-Menu"><a href="#Quick-Menu" class="headerlink" title="Quick Menu"></a>Quick Menu</h5><p>快捷键<code>shift + alt + H</code>调出<strong>branch history quick pick menu</strong>，  这个菜单功能非常强大，我们可以查看之前的commits信息、所有commits信息、根据message&#x2F;author&#x2F;filename搜索commits信息、查看一些文件的历史记录等。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/quick-menu.png" alt="Quick Menu"></p>
+<p><img src="/images/2017-07-12-vscode-introduction/search-by-messages.png" alt="Search by messages"></p>
+<p><img src="/images/2017-07-12-vscode-introduction/search-by-author01.png" alt="Search by autor 01"></p>
+<p><img src="/images/2017-07-12-vscode-introduction/search-by-author02.png" alt="Search by autor 02"></p>
+<p><img src="/images/2017-07-12-vscode-introduction/search-by-filename01.png" alt="Search by filename 01"></p>
+<p><img src="/images/2017-07-12-vscode-introduction/search-by-filename02.png" alt="Search by filename 02"></p>
+<p>通过message查找时，直接在输入框里输入message的关键信息即可。通过author查找时，则是输入<code>@author</code>，类似于图中的<code>@Zeke</code>。而通过filename查找，则需要注意一下，这里应该是<code>: filepath</code>，也就是相对于当前项目根目录的相对路径。类似于图中的<code>:lib/browser/chrome-extension.js</code>。除了这些之外，还可以根据commit id查找，这个用的不多，这里就不再举例了。</p>
+<h3 id="Project-Manager"><a href="#Project-Manager" class="headerlink" title="Project Manager"></a><a target="_blank" rel="noopener" href="https://github.com/alefragnani/vscode-project-manager">Project Manager</a></h3><p>项目管理插件，这个功能和Git Project Manager有点类似，只不过，这个不但能管理git项目，还可以管理其他项目。</p>
+<p><img src="/images/2017-07-12-vscode-introduction/project-manager-commands.png" alt="Project Manager"></p>
+<p>这个插件一共5个命令：</p>
+<ul>
+<li><strong>Project Manager: Edit Project Edit</strong> 跳转到配置文件 projects.json 进行项目列表目录的配置修改。</li>
+<li><strong>Project Manager: List Projects</strong> 列出已经保存的项目列表。</li>
+<li><strong>Project Manager: List Projects to Open in New Window</strong> 列出已保存的项目列表并在新窗口打开选中的项目。</li>
+<li><strong>Project Manager: Refresh Projects</strong> 刷新项目列表。</li>
+<li><strong>Project Manager: Save Project</strong> 保存当前项目到项目列表。</li>
+</ul>
+<h3 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h3><p>其他的一些插件就不做详细介绍了，这里列出我用过的感觉比较好的，大家自己到github上查阅吧。<a target="_blank" rel="noopener" href="https://github.com/vscode-icons/vscode-icons">vscode-icons</a>、<a target="_blank" rel="noopener" href="https://github.com/zhaopengme/vscode-fileheader">vscode-fileheader</a>、<a target="_blank" rel="noopener" href="https://github.com/joelday/vscode-docthis">Document This</a>、<a target="_blank" rel="noopener" href="https://github.com/pranaygp/vscode-css-peek">CSS Peek</a>、<a target="_blank" rel="noopener" href="https://github.com/abierbaum/vscode-file-peek">File Peek</a>、<a target="_blank" rel="noopener" href="https://github.com/yzane/vscode-markdown-pdf">Markdown PDF</a>、<a target="_blank" rel="noopener" href="https://github.com/shd101wyy/vscode-markdown-preview-enhanced">Markdown Preview Enhanced</a>、<a target="_blank" rel="noopener" href="https://github.com/kogai/vscode-regex-railroad-diagrams">Regex Railroad Diagrams</a>。</p>
+<p>如果还有其他比较好用或者有意思的插件，欢迎大家前来留言。一起讨论交流。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://maple-yf.github.io">maple.yf</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://maple-yf.github.io/2017/07/20/2017-07-20-vscode-introduction/">https://maple-yf.github.io/2017/07/20/2017-07-20-vscode-introduction/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://maple-yf.github.io" target="_blank">Maple's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/VS-Code/">VS Code</a></div><div class="post_share"><div class="social-share" data-image="/images/icons/M-S.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/images/QrCode/weixin.png" target="_blank"><img class="post-qr-code-img" src="/images/QrCode/weixin.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/images/QrCode/zhifubao.png" target="_blank"><img class="post-qr-code-img" src="/images/QrCode/zhifubao.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2017/07/21/2017-07-21-raining-night/" title="夜雨"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">夜雨</div></div></a></div><div class="next-post pull-right"><a href="/2017/07/09/2017-07-09-south-lake-at-dusk/" title="南湖向晚"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">南湖向晚</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/icons/M-S.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">maple.yf</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maple-yf"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maple-yf" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:maplecumtcs@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B8%A6%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">自带功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Emmet"><span class="toc-number">3.1.</span> <span class="toc-text">Emmet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5"><span class="toc-number">3.2.</span> <span class="toc-text">智能感知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Format-Document"><span class="toc-number">3.3.</span> <span class="toc-text">Format Document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Auto-Save"><span class="toc-number">3.4.</span> <span class="toc-text">Auto Save</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal"><span class="toc-number">3.5.</span> <span class="toc-text">Terminal</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90"><span class="toc-number">4.</span> <span class="toc-text">插件推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-History"><span class="toc-number">4.1.</span> <span class="toc-text">Git History</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-Peoject-Manager"><span class="toc-number">4.2.</span> <span class="toc-text">Git Peoject Manager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-Lens"><span class="toc-number">4.3.</span> <span class="toc-text">Git Lens</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Code-Lens"><span class="toc-number">4.3.0.1.</span> <span class="toc-text">Code Lens</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Blame-Annotations"><span class="toc-number">4.3.0.2.</span> <span class="toc-text">Blame Annotations</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Status-Bar-Blame"><span class="toc-number">4.3.0.3.</span> <span class="toc-text">Status Bar Blame</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Interactive-Blame"><span class="toc-number">4.3.0.4.</span> <span class="toc-text">Interactive Blame</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Quick-Menu"><span class="toc-number">4.3.0.5.</span> <span class="toc-text">Quick Menu</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Project-Manager"><span class="toc-number">4.4.</span> <span class="toc-text">Project Manager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%8F%92%E4%BB%B6"><span class="toc-number">4.5.</span> <span class="toc-text">其他插件</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2018/01/20/2018-01-20-introduction-of-softweare-release-lifecycle/" title="软件开发生命周期"><img src="/images/introduction-of-software-release-life-cycle/software-release-life-cycle.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件开发生命周期"/></a><div class="content"><a class="title" href="/2018/01/20/2018-01-20-introduction-of-softweare-release-lifecycle/" title="软件开发生命周期">软件开发生命周期</a><time datetime="2018-01-19T16:00:00.000Z" title="发表于 2018-01-20 00:00:00">2018-01-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/01/08/2018-01-08-jest-introduction/" title="Jest自动化测试简介">Jest自动化测试简介</a><time datetime="2018-01-07T16:00:00.000Z" title="发表于 2018-01-08 00:00:00">2018-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/01/08/2018-01-08-residual-poem/" title="残诗">残诗</a><time datetime="2018-01-07T16:00:00.000Z" title="发表于 2018-01-08 00:00:00">2018-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/01/07/2018-01-07-webpack-introduce/" title="模块化和Webpack入门">模块化和Webpack入门</a><time datetime="2018-01-06T16:00:00.000Z" title="发表于 2018-01-07 00:00:00">2018-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/08/27/2017-08-27-plantuml/" title="plantuml简介">plantuml简介</a><time datetime="2017-08-26T16:00:00.000Z" title="发表于 2017-08-27 00:00:00">2017-08-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By maple.yf</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '8dffc6dc9ea95e619dd1',
+      clientSecret: '63cdd6e5f3b250180a4bf630bb9d3daf1aa028e2',
+      repo: 'maple-yf.github.io',
+      owner: 'maple-yf',
+      admin: ['maple-yf'],
+      id: '6e36b73fb59e2843c2a30459573ac9f9',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
